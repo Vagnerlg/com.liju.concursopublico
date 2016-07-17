@@ -6,4 +6,4 @@ Com ele e possível acessar as leis federais de forma mais interativa com possibi
 
 ## Tecnologia utilizada
 
-Aplicativo _Android Nativo_ feito em java utilizando o _material design_ acesso a _api_ própria com o _library volley_ além de faze uso do banco interno _sqlite_ e _tts(text to speech)_ .
+Aplicativo __Android Nativo__ feito em java utilizando o __material design__ acesso a __api__ própria com o __library volley__ além de faze uso do banco interno __sqlite__ e __tts(text to speech)__ .
