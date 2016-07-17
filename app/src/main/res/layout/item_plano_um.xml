@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:background="@color/colorGray10">
+    <ImageView
+        android:id="@+id/img_plano_um"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plano_um"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/titulo_plano_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_plano_um"
+        android:text="Um mês de acesso Premium"
+        android:layout_margin="4dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/descricao_plano_um"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo_plano_um"
+        android:layout_marginLeft="8dp"
+        android:text="Ideal para quem quer testar as vantagens de ser Premium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_toRightOf="@+id/img_plano_um"/>
+
+
+    <TextView
+        android:id="@+id/preco_plano_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:padding="4dp"
+        android:text="Valor R$ 1,49"
+        android:layout_below="@+id/img_plano_um"
+        android:background="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+        android:layout_toLeftOf="@+id/desconto_plano_um"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/desconto_plano_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:padding="4dp"
+        android:text="Desc. 0%"
+        android:layout_below="@+id/img_plano_um"
+        android:background="@color/textColorSecondary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+        android:layout_toLeftOf="@+id/total_plano_um"
+        android:layout_alignBottom="@+id/preco_plano_um"/>
+
+    <TextView
+        android:id="@+id/total_plano_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:padding="4dp"
+        android:text="Total 1,49"
+        android:layout_below="@+id/img_plano_um"
+        android:background="@color/dividerColor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/preco_plano_um"/>
+
+    <Button
+        android:id="@+id/btn_plano_1"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimary"
+        android:onClick="sendPlano"
+        android:padding="8dp"
+        android:text="Quero este plano!"
+        android:textColor="@color/textLight"
+        android:layout_below="@+id/total_plano_um"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_player"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_bar"
+    android:background="@drawable/gradiente_cinza"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/player_item"
+        android:onClick="sendPlayerItem"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_play_arrow_black_36dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:text="Ouvir a partir\n da seleção."
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player_controller"
+        android:onClick="sendPlayerController"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:text="Controlar\nPlayer"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_playlist_play_black_36dp" />
+    </LinearLayout>
+</LinearLayout>

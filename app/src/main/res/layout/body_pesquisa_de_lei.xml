@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ActivityFaleConosco"
+    tools:showIn="@layout/layout_pesquisa_de_lei"
+    android:id="@+id/root">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray10"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/numero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:hint="Nº lei..."
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/ano"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="Ano lei..."
+                android:inputType="number" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descrição ou nome da lei..."
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="*Preencha pelo menos Nº lei e/ou descrição"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/resposta"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+    </LinearLayout>
+
+    <include layout="@layout/load" />
+
+    <include layout="@layout/erro" />
+
+    <include layout="@layout/lista" />
+
+    <include layout="@layout/ad_word" />
+
+</LinearLayout>

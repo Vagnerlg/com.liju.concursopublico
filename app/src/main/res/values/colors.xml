@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorPrimary50">#7986CB</color>
+    <color name="colorPrimary70">#5C6BC0</color>
+    -->
+
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorPrimaryLight">#BBDEFB</color>
+    <color name="colorPrimary50">#64B5F6</color>
+    <color name="colorPrimary70">#42A5F5</color>
+    <color name="colorPrimary900">#0D47A1</color>
+    <color name="colorPrimaryAlpha">#2196F3cc</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="colorAccentLight">#FFE57F</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+    <color name="dividerColor">#B6B6B6</color>
+    <color name="textLight">#FFFFFF</color>
+
+    <color name="colorConstituicao">#177A60</color>
+    <color name="colorCodigo">#375BBB</color>
+    <color name="colorEstatuto">#DD8E07</color>
+    <color name="colorAdm">#555F69</color>
+    <color name="colorPenal">#CE0000</color>
+    <color name="colorPrev">#019ABA</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorLine">#CDDC39</color>
+
+
+    <color name="colorGray30">#b2b2b2</color>
+    <color name="colorGray20">#ccc</color>
+    <color name="colorGray10">#e2e2e2</color>
+
+    <color name="colorLight">#ddd</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="marcacao_branco">#fff</color>
+    <color name="marcacao_amarelo">#ffff99</color>
+    <color name="marcacao_verde">#66ff66</color>
+    <color name="marcacao_vermelho">#ff8566</color>
+    <color name="marcacao_azul">#99ccff</color>
+</resources>

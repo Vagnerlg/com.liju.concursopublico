@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name" translatable="false">Lei - Concurso Público</string>
+    <string name="title_activity_main">Lei - Concurso Público</string>
+    <string name="title_activity_lei">Lei</string>
+    <string name="title_activity_laucher">Bem Vindo</string>
+    <string name="title_activity_menus">Menu</string>
+    <string name="title_activity_login">Inicio</string>
+    <string name="title_activity_player">Player Lei concurso público</string>
+    <string name="title_activity_carrinho_de_compra">Carrinho de compra</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_pesquisa_na_lei">Pesquisa na Lei</string>
+    <string name="title_activity_activity_fale_conosco">Fale Conosco</string>
+    <string name="title_activity_activity_pesquisa_de_lei">Pequisar por leis</string>
+    <string name="title_activity_activity_premium">Seja Premium</string>
+    <string name="adword_id">"ca-app-pub-4903827553237664/1964563231"</string>
+
+    <string name="sem_net">Desculpe!\nSem internet.</string>
+    <string name="sem_conta">Voçê ainda não possui uma conta no aplicativo Lei-Concurso Público.</string>
+    <string name="btn_faca_cadastro">Faça seu cadastro agora.</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="plano">Plano</string>
+    <string name="altera_senha">Alterar senha</string>
+    <string name="inicio">Configuração inicial. Aguarde...</string>
+    <string name="alterar">Alterar</string>
+    <string name="voltar">Voltar</string>
+
+
+    <string name="info_titulo_sem_net">Conexão com a internet</string>
+    <string name="info_titulo_sem_ruim">Falha com a internet</string>
+    <string name="info_titulo_cadatro">Faça seu cadastro!</string>
+    <string name="info_titulo_premium">Seja Premium!</string>
+    <string name="info_sem_net">Desculpe! Não foi encontrada conexão com a <b>internet</b> :(</string>
+    <string name="info_sem_ruim">Desculpe! Não foi possivel buscas as informações da <b>internet</b> :(</string>
+    <string name="info_cadatro">É necessário estar cadastrado para concluir está ação</string>
+    <string name="info_premium">Conteúdo esclusivo para usuários <b>Premium</b></string>
+    <string name="info_titulo_time_out">Internet não respondendo!</string>
+    <string name="info_time_out">Desculpe! A <b>internet</b>  não está respondendo verifique a sua conexão e tente novamente.</string>
+    <string name="info_titulo_erro_geral">Erro inesperado.</string>
+    <string name="info_erro_geral">Ops! ocorreu um erro inesperado pedimos desculpas. Tente novamente mais tarde</string>
+</resources>

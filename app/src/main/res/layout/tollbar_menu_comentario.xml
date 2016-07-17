@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_comentario"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_bar"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:background="@color/colorLight">
+
+    <ImageView
+        android:id="@+id/btn_comentPublic"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_lock_open_black_36dp"
+        android:onClick="btnTipoComentario"/>
+
+    <ImageView
+        android:id="@+id/btn_comentPrivado"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_lock_outline_white_24dp"
+        android:onClick="btnTipoComentario"/>
+
+    <EditText
+        android:id="@+id/edit_comentario"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:hint="Comentario"
+        android:imeOptions="actionDone"
+        android:inputType="textAutoCorrect|textMultiLine" />
+
+    <ImageView
+        android:id="@+id/btn_sendcomentario"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:onClick="sendComent"
+        android:scaleType="center"
+        android:src="@drawable/ic_send_black_36dp" />
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
+    tools:context=".ActivityLaucher">
+
+    <ImageView
+        android:id="@+id/logo_laucher"
+        android:layout_width="@dimen/logo_laucher"
+        android:layout_height="@dimen/logo_laucher"
+        android:layout_gravity="center"
+        android:elevation="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_media_logo_lg" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_margin="16dp">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        />
+    <TextView
+        android:id="@+id/texto"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/inicio"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorWhite"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:alpha="0.5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorWhite"/>
+</FrameLayout>

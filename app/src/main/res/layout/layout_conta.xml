@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityConta">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_bar"
+            android:layout_gravity="top"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="@dimen/height_bar"
+        android:background="@color/colorLight">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dividerColor"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo_nome"
+                style="@style/titulo_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="sendConfig"
+                android:text="@string/nome" />
+
+            <TextView
+                android:id="@+id/texto_nome"
+                style="@style/texto_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:onClick="sendConfig" />
+
+            <TextView
+                android:id="@+id/titulo_email"
+                style="@style/titulo_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="sendConfig"
+                android:text="@string/email" />
+
+            <TextView
+                android:id="@+id/texto_email"
+                style="@style/texto_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:onClick="sendConfig" />
+
+            <TextView
+                android:id="@+id/titulo_plano"
+                style="@style/titulo_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="sendConfig"
+                android:text="@string/plano" />
+
+            <TextView
+                android:id="@+id/texto_plano"
+                style="@style/texto_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:onClick="sendConfig" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/info" />
+
+    <include layout="@layout/ad_word" />
+</FrameLayout>

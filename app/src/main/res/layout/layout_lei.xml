@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <include layout="@layout/lista" />
+
+    <include layout="@layout/load" />
+
+    <include layout="@layout/erro" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bar"
+        android:layout_gravity="top"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+
+    <LinearLayout
+        android:id="@+id/toolbar_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <include layout="@layout/tollbar_menu_edicao" />
+
+        <include layout="@layout/tollbar_menu_marcacao" />
+
+        <include layout="@layout/tollbar_menu_comentario" />
+
+        <include layout="@layout/tollbar_menu_player" />
+
+        <include layout="@layout/ad_word" />
+
+    </LinearLayout>
+</FrameLayout>

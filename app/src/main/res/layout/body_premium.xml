@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="v2.lei.ggtec.leiversao2.ActivityPremium"
+    tools:showIn="@layout/layout_premium">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/titulo_premium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Premium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/textColorPrimary" />
+
+        <TextView
+            android:id="@+id/subtitulo_premium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titulo_premium"
+            android:text="Lei - Concurso Público"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+            android:textColor="@color/textColorPrimary" />
+
+        <TextView
+            android:id="@+id/paragrafo_um"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subtitulo_premium"
+            android:layout_margin="8dp"
+            android:text="Seja Premium por um valor pequeno ao mês e pelo tempo que quiser!\nCom os planos premium você tem acesso as lei e todo o aplicativo Sem anuncios e também pode ouvir as leis sem limite de tempo!\n Confira abaixo os valores e descontos dos planos."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+            android:textColor="@color/textColorSecondary" />
+
+        <include
+            android:id="@+id/conteiner_plano_um"
+            layout="@layout/item_plano_um"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/paragrafo_um"
+            android:background="@color/colorLight"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/conteiner_plano_tres"
+            layout="@layout/item_plano_tres"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/conteiner_plano_um"
+            android:background="@color/colorLight"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/conteiner_plano_seis"
+            layout="@layout/item_plano_seis"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/conteiner_plano_tres"
+            android:background="@color/colorLight"
+            android:layout_marginBottom="16dp"/>
+
+        <include
+            android:id="@+id/conteiner_plano_doze"
+            layout="@layout/item_plano_doze"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/conteiner_plano_seis"
+            android:background="@color/colorLight"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/texto_mercado_pago"
+            android:layout_below="@+id/conteiner_plano_doze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meio de pagamento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/img_mercado_pago"
+            android:layout_below="@+id/conteiner_plano_doze"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mercado_pago"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"/>
+
+    </RelativeLayout>
+</ScrollView>

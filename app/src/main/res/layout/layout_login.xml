@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiente">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:id="@+id/escolha"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#3FFF"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:text="Olá! Como gostaria de começar?"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="23sp"
+                    android:textStyle="bold|italic" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/botao_inicio"
+                    android:gravity="center"
+                    android:onClick="cadastro"
+                    android:text="Fazer um cadastro."
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/botao_inicio"
+                    android:gravity="center"
+                    android:onClick="login"
+                    android:text="Efetuar um Login."
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/botao_inicio"
+                    android:gravity="center"
+                    android:onClick="visitante"
+                    android:text="Entrar como visitante."
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cadastro_login"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#3FFF"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <FrameLayout
+                    android:id="@+id/root"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/load" />
+
+                    <include layout="@layout/erro" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/text_tipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="26sp"
+                    android:textStyle="bold|italic" />
+
+                <EditText
+                    android:id="@+id/nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorWhite"
+                    android:hint="Nome"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorWhite"
+                    android:hint="email"
+                    android:inputType="textEmailAddress"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorWhite"
+                    android:hint="senha"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/botao_inicio"
+                    android:gravity="center"
+                    android:onClick="sendCadastroLogin"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/progress_bar_login"
+        android:background="@color/colorPrimaryAlpha"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

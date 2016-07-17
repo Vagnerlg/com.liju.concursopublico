@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_marcacao"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_bar"
+    android:background="@color/colorLight"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/color_br"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_color_br_24dp"
+        android:onClick="selectColor" />
+
+    <ImageView
+        android:id="@+id/color_am"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_color_am_select_24dp"
+        android:onClick="selectColor" />
+
+    <ImageView
+        android:id="@+id/color_vm"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_color_vm_24dp"
+        android:onClick="selectColor" />
+
+    <ImageView
+        android:id="@+id/color_vd"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_color_vd_24dp"
+        android:onClick="selectColor" />
+
+    <ImageView
+        android:id="@+id/color_az"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_color_az_24dp"
+        android:onClick="selectColor" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_clear_black_24dp"
+        android:tag="cancel"
+        android:onClick="cancelMarcacao"/>
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_done_black_24dp"
+        android:tag="check"
+        android:onClick="sendMarcacao"/>
+</LinearLayout>

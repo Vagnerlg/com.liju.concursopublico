@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/full_screen"
+        android:orderInCategory="100"
+        android:title="Full Screen"
+        android:icon="@drawable/ic_fullscreen_white_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menus"
+        android:orderInCategory="100"
+        android:title="Menus"
+        android:icon="@drawable/ic_list_white_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/fonte"
+        android:orderInCategory="100"
+        android:title="Fonte"
+        android:icon="@drawable/ic_text_format_white_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/pesquisa_lei"
+        android:orderInCategory="100"
+        android:title="Player de lei"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/infolei"
+        android:orderInCategory="100"
+        android:title="Player de lei"
+        android:icon="@drawable/ic_info_outline_white_24dp"
+        app:showAsAction="always" />
+</menu>

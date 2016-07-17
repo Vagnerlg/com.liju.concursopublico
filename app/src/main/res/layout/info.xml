@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info_conteiner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLight"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <ImageView
+            android:id="@+id/info_ilustration"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ilustration_info"
+            android:tint="@color/dividerColor"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/info_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/dividerColor"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/info_mensagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/dividerColor"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/info_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/wallet_link_text_light"
+            android:background="@color/textLight"
+            android:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>

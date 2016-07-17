@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_edicao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:orientation="horizontal"
+    >
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+
+    <ImageView
+        android:id="@+id/btn_comentario"
+        android:layout_width="@dimen/height_bar"
+        android:layout_height="@dimen/height_bar"
+        android:onClick="btnEdicao"
+        android:scaleType="center"
+        android:background="@drawable/circulo"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_comment_white_24dp"
+        android:elevation="4dp" />
+    <ImageView
+        android:id="@+id/btn_marcacao"
+        android:layout_width="@dimen/height_bar"
+        android:layout_height="@dimen/height_bar"
+        android:background="@drawable/circulo"
+        android:layout_marginRight="16dp"
+        android:onClick="btnEdicao"
+        android:scaleType="center"
+        android:src="@drawable/ic_edit_white_24dp"
+        android:elevation="4dp"
+        />
+    <ImageView
+        android:id="@+id/btn_player"
+        android:layout_width="@dimen/height_bar"
+        android:layout_height="@dimen/height_bar"
+        android:onClick="btnEdicao"
+        android:scaleType="center"
+        android:background="@drawable/circulo"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_headset_white_24dp"
+        android:elevation="4dp"
+        />
+</LinearLayout>
