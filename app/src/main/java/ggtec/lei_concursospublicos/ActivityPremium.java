@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import ggtec.lei_concursospublicos.Dialog.DialogoCadastro;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityPremium extends AppCompatActivity {
 

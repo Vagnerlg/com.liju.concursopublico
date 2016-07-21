@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
 
 public class PainelEdicao {
 
@@ -107,17 +107,17 @@ public class PainelEdicao {
         btnPlayer.setColorFilter(colorAcent);
     }
 
-    public void indexComentario(ItemLei itemLei) {
+    public void indexComentario(Trecho trecho) {
         btnShows(R.id.btn_comentario);
-        if (itemLei.getComentario() != null) {
-            editTextComentario.setText(itemLei.getComentario().getTexto());
-            if (itemLei.getComentario().getPublico() || itemLei.getComentario().getPublico() == null) {
+        if (trecho.getComentario() != null) {
+            editTextComentario.setText(trecho.getComentario().getTexto());
+            if (trecho.getComentario().getPublico() || trecho.getComentario().getPublico() == null) {
                 btnTipoComentario(btnPublico);
             } else {
                 btnTipoComentario(btnPrivado);
             }
-        } else if (itemLei.getTipo() < 9) {
-            editTextComentario.setHint("Comente : " + itemLei.getClasse());
+        } else if (trecho.getTipo() < 9) {
+            editTextComentario.setHint("Comente : " + trecho.getClasse());
         }
     }
 

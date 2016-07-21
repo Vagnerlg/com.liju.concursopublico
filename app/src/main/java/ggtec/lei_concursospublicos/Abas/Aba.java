@@ -18,14 +18,14 @@ import ggtec.lei_concursospublicos.Adapter.AdapterItemLei;
 import ggtec.lei_concursospublicos.Adapter.AdapterMenuArtigo;
 import ggtec.lei_concursospublicos.Adapter.AdapterMenuTitulo;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.Debug;
-import ggtec.lei_concursospublicos.Sistema.Fast;
-import ggtec.lei_concursospublicos.Sistema.ItemInfoLei;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
-import ggtec.lei_concursospublicos.Sistema.Lista;
-import ggtec.lei_concursospublicos.Sistema.ListaInfoLei;
-import ggtec.lei_concursospublicos.Sistema.ListaLei;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
+import ggtec.lei_concursospublicos.api_antiga.Fast;
+import ggtec.lei_concursospublicos.api_antiga.ItemInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
+import ggtec.lei_concursospublicos.api_antiga.Lista;
+import ggtec.lei_concursospublicos.api_antiga.ListaInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.Lei;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 /**
  * Created by Vagner on 12/02/2016.
@@ -88,20 +88,20 @@ public class Aba extends Fragment {
 
         if (tipoLista == TIPO_LISTA_LEI) {
             tab_num = args.getString(AdapterAbas.KEY_GRUPO);
-            lista = new ListaLei(getContext(), root, tab_num);
+            lista = new Lei(getContext(), root, tab_num);
             onItemLei = new OnItemLei();
             String origem = "";
             if(tipoAba == TIPO_ABA_TITULO){
-                ((ListaLei)lista).getTitulos(onItemLei);
+                ((Lei)lista).getTitulos(onItemLei);
             }
             if(tipoAba == TIPO_ABA_ARTIGO){
-                ((ListaLei)lista).getArtigos(onItemLei);
+                ((Lei)lista).getArtigos(onItemLei);
             }
             if(tipoAba == TIPO_ABA_COMENTARIO){
-                ((ListaLei)lista).getComentarios(onItemLei);
+                ((Lei)lista).getComentarios(onItemLei);
             }
             if(tipoAba == TIPO_ABA_MARCACAO){
-                ((ListaLei)lista).getMarcacoes(onItemLei);
+                ((Lei)lista).getMarcacoes(onItemLei);
             }
         }
 
@@ -132,29 +132,29 @@ public class Aba extends Fragment {
         }
     }
 
-    private class OnItemLei implements ListaLei.OnItemLei{
+    private class OnItemLei implements Lei.OnItemLei{
 
         @Override
-        public void resp(ArrayList<ItemLei> itemLeis) {
+        public void resp(ArrayList<Trecho> trechos) {
             if(tipoAba == TIPO_ABA_TITULO){
-                if(itemLeis.size()>0){
-                    AdapterMenuTitulo mAdapter = new AdapterMenuTitulo(itemLeis, getResources().getDisplayMetrics().density, getContext());
+                if(trechos.size()>0){
+                    AdapterMenuTitulo mAdapter = new AdapterMenuTitulo(trechos, getResources().getDisplayMetrics().density, getContext());
                     mRecyclerView.setAdapter(mAdapter);
                 }else{
                     Fast.configInfo(root, "Esta lei não possui Títulos.");
                 }
             }
             if(tipoAba == TIPO_ABA_ARTIGO){
-                if(itemLeis.size()>0){
-                    AdapterMenuArtigo mAdapter = new AdapterMenuArtigo(itemLeis);
+                if(trechos.size()>0){
+                    AdapterMenuArtigo mAdapter = new AdapterMenuArtigo(trechos);
                     mRecyclerView.setAdapter(mAdapter);
                 }else{
                     Fast.configInfo(root, "Esta lei não possui Artigos.");
                 }
             }
             if(tipoAba == TIPO_ABA_COMENTARIO){
-                if(itemLeis.size()>0){
-                    AdapterItemLei mAdapter = new AdapterItemLei(getContext(),itemLeis, AdapterItemLei.ORIGEM_MENU_COMENTARIO);
+                if(trechos.size()>0){
+                    AdapterItemLei mAdapter = new AdapterItemLei(getContext(), trechos, AdapterItemLei.ORIGEM_MENU_COMENTARIO);
                     mRecyclerView.setAdapter(mAdapter);
                 }else if(Usuario.getInstance(getContext()).isCadastrado()){
                     Fast.configInfo(root, "Você ainda não fez comentários nesta lei.");
@@ -163,8 +163,8 @@ public class Aba extends Fragment {
                 }
             }
             if(tipoAba == TIPO_ABA_MARCACAO){
-                if(itemLeis.size()>0){
-                    AdapterItemLei mAdapter = new AdapterItemLei(getContext(),itemLeis, AdapterItemLei.ORIGEM_MENU_MARCACAO);
+                if(trechos.size()>0){
+                    AdapterItemLei mAdapter = new AdapterItemLei(getContext(), trechos, AdapterItemLei.ORIGEM_MENU_MARCACAO);
                     mRecyclerView.setAdapter(mAdapter);
                 }else  if(Usuario.getInstance(getContext()).isCadastrado()){
                     Fast.configInfo(root, "Você ainda não fez marcações nesta lei.");

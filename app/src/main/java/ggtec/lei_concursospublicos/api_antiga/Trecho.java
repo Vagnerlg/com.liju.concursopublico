@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -6,61 +6,50 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import ggtec.lei_concursospublicos.api_antiga.net.Link;
 
 /**
  * Created by Vagner on 02/12/2015.
  */
-public class ItemLei {
+public class Trecho {
 
+    private int id = -1;
     private String texto = null;
     private String lei_id = null;
+    private int tipo = -1;
+    private String classe;
+
     private String marcacao = null;
     private Boolean selecionado = false;
     private Comentario myComentario = null;
-    private ArrayList<Comentario> comentariosPublico = new ArrayList<>();
+    private List<Comentario> comentariosPublico = new ArrayList<>();
 
-    private int id = -1;
-    private int tipo = -1;
-
-    private String classe;
-
-    public ItemLei(){
-
-    }
-
-    public void setID(int id){
+    protected Trecho(int id,String lei_id,int tipo,String classe,String texto){
         this.id = id;
+        this.lei_id = lei_id;
+        this.tipo = tipo;
+        this.classe = classe;
+        this.texto = texto;
     }
 
     public int getID(){
         return this.id;
     }
 
-    public void setLeiID(String leiID){
-        this.lei_id = leiID;
-    }
-
     public String getLeiID(){
         return this.lei_id;
     }
 
-    public void setTipo(int tipo){
-        this.tipo = tipo;
-    }
     public int getTipo(){
         return this.tipo;
     }
 
-    public void setClasse(String classe){
-        this.classe = classe;
-    }
 
     public String getClasse() {
         return classe;
-    }
-
-    public void setTexto(String texto){
-        this.texto = texto;
     }
 
     public String getTexto() {
@@ -75,12 +64,13 @@ public class ItemLei {
         return this.myComentario;
     }
 
-    public void addComentarioPublico(Comentario comentario){
+    protected void addComentarioPublico(Comentario comentario){
         comentariosPublico.add(comentario);
     }
 
-    public ArrayList<Comentario> getComentariosPublico(){
-        return comentariosPublico;
+    public List<Comentario> getComentariosPublico(){
+
+        return Collections.unmodifiableList(comentariosPublico);
     }
 
 

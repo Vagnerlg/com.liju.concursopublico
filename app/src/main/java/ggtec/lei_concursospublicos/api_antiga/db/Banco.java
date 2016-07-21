@@ -1,8 +1,10 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import ggtec.lei_concursospublicos.api_antiga.Debug;
 
 import static android.provider.BaseColumns._ID;
 

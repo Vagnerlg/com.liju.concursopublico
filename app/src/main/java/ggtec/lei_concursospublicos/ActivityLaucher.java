@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import ggtec.lei_concursospublicos.Sistema.Inicial;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Inicial;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityLaucher extends AppCompatActivity {
 

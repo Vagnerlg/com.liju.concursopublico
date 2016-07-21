@@ -10,10 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import ggtec.lei_concursospublicos.Eventos.OnPositivoString;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.Config;
-import ggtec.lei_concursospublicos.Sistema.Debug;
+import ggtec.lei_concursospublicos.api_antiga.Config;
 
 /**
  * Created by Vagner on 14/01/2016.

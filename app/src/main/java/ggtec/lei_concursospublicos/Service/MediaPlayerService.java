@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -18,9 +17,6 @@ import android.speech.tts.Voice;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -32,21 +28,15 @@ import java.util.Locale;
 
 import ggtec.lei_concursospublicos.ActivityPlayer;
 import ggtec.lei_concursospublicos.ActivityTssAjuda;
-import ggtec.lei_concursospublicos.Dialog.DialogoTtsGoogle;
-import ggtec.lei_concursospublicos.Eventos.OnBoolListener;
 import ggtec.lei_concursospublicos.Eventos.OnIntListerner;
-import ggtec.lei_concursospublicos.Eventos.RequesJsonObj;
 import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.AdapterFala;
-import ggtec.lei_concursospublicos.Sistema.Config;
-import ggtec.lei_concursospublicos.Sistema.Debug;
-import ggtec.lei_concursospublicos.Sistema.Internet;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
-import ggtec.lei_concursospublicos.Sistema.Link;
-import ggtec.lei_concursospublicos.Sistema.ListaLei;
-import ggtec.lei_concursospublicos.Sistema.Request;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.AdapterFala;
+import ggtec.lei_concursospublicos.api_antiga.Config;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
+import ggtec.lei_concursospublicos.api_antiga.Lei;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 /**
  * Created by paulruiz on 10/28/14.
@@ -91,7 +81,7 @@ public class MediaPlayerService extends Service implements AudioManager.OnAudioF
     //inicialização de variaveis usadas em toda a classe
     public static final int AC_PLAY = 1;
     public static final int AC_PAUSE = 2;
-    public static ArrayList<ItemLei> allTrecho = null;
+    public static ArrayList<Trecho> allTrecho = null;
     private int pointer = 0;
     private TextToSpeech tts;
     private int resultSpeech;
@@ -560,13 +550,13 @@ public class MediaPlayerService extends Service implements AudioManager.OnAudioF
                 if (!isLoad && !fimLoad) {
                     //busca mais leis
                     isLoad = true;
-                    ListaLei listaLei = new ListaLei(getBaseContext(),null,tab_num);
-                    listaLei.getLeiBack(allTrecho.get(allTrecho.size() - 1).getID(),
-                            new ListaLei.OnItemLei() {
+                    Lei lei = new Lei(getBaseContext(),null,tab_num);
+                    lei.getLeiBack(allTrecho.get(allTrecho.size() - 1).getID(),
+                            new Lei.OnItemLei() {
                                 @Override
-                                public void resp(ArrayList<ItemLei> itemLeis) {
-                                    allTrecho.addAll(itemLeis);
-                                    int limit = itemLeis.get(itemLeis.size() - 1).getID();
+                                public void resp(ArrayList<Trecho> trechos) {
+                                    allTrecho.addAll(trechos);
+                                    int limit = trechos.get(trechos.size() - 1).getID();
                                     limit_tab = "" + limit;
                                     isLoad = false;
                                 }

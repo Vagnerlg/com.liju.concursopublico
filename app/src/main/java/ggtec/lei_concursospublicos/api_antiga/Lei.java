@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 import android.content.Context;
 import android.view.View;
@@ -8,48 +8,36 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import ggtec.lei_concursospublicos.api_antiga.net.Link;
 
 /**
  * Created by Vagner on 02/12/2015.
  */
-public class ListaLei extends Lista {
+public class Lei extends Lista {
 
-    private String tab_num;
+    private ItemInfoLei infoLei;
+    private List<Trecho> trechos = new ArrayList<>();
+
     private Context context;
-    private int limitresp = -1;
-    private int lote = -1;
+    private int pagina = -1;
     private int totalItens = -1;
     private View activity = null;
 
 
-    public ListaLei(Context context,View tratamento, String tab_num) {
+    public Lei(ItemInfoLei infoLei, Context context, View tratamento) {
         this.activity = tratamento;
         this.context = context;
-        this.tab_num = tab_num;
+        //capitura das leis na Net
     }
 
-    public int getLimit() {
-        return this.limitresp;
-    }
-
-    private void setLimit(int limit) {
-        this.limitresp = limit;
-    }
-
-    public int getLote() {
-        return this.lote;
-    }
-
-    private void setLote(int lote) {
-        this.lote = lote;
-    }
-
-    public int getTotalItens() {
+    public int total() {
         return this.totalItens;
     }
 
-    private void setTotalIntens(int total) {
-        this.totalItens = total;
+    public int pagina() {
+        return this.pagina;
     }
 
     public void getLei(int limit, final OnItemLei resp) {
@@ -173,10 +161,10 @@ public class ListaLei extends Lista {
                             JSONArray jsonArrayArtigo = jsonObject.getJSONArray("artigo");
                             JSONArray jsonArrayComentario = jsonObject.getJSONArray("comentarios_user");
                             JSONArray jsonArrayMarcacao = jsonObject.getJSONArray("marcacoes_user");
-                            ArrayList<ItemLei> titulos = parseJsonLei(jsonArrayTitulo);
-                            ArrayList<ItemLei> artigos = parseJsonLei(jsonArrayArtigo);
-                            ArrayList<ItemLei> comentario = parseJsonLei(jsonArrayComentario);
-                            ArrayList<ItemLei> marcacao = parseJsonLei(jsonArrayMarcacao);
+                            ArrayList<Trecho> titulos = parseJsonLei(jsonArrayTitulo);
+                            ArrayList<Trecho> artigos = parseJsonLei(jsonArrayArtigo);
+                            ArrayList<Trecho> comentario = parseJsonLei(jsonArrayComentario);
+                            ArrayList<Trecho> marcacao = parseJsonLei(jsonArrayMarcacao);
                             resp.resp(titulos, artigos, comentario, marcacao);
                             jsonObject = null;
                             jsonArrayArtigo = null;
@@ -211,7 +199,7 @@ public class ListaLei extends Lista {
                     public void resp(JSONObject jsonObject) {
                         try {
                             JSONArray jsonArrayTitulo = jsonObject.getJSONArray("titulo");
-                            ArrayList<ItemLei> titulos = parseJsonLei(jsonArrayTitulo);
+                            ArrayList<Trecho> titulos = parseJsonLei(jsonArrayTitulo);
                             resp.resp(titulos);
                             envarResposta();
                         } catch (JSONException e) {
@@ -237,7 +225,7 @@ public class ListaLei extends Lista {
                     public void resp(JSONObject jsonObject) {
                         try {
                             JSONArray jsonArrayArtigo = jsonObject.getJSONArray("artigo");
-                            ArrayList<ItemLei> artigos = parseJsonLei(jsonArrayArtigo);
+                            ArrayList<Trecho> artigos = parseJsonLei(jsonArrayArtigo);
                             resp.resp(artigos);
                             envarResposta();
                         } catch (JSONException e) {
@@ -264,7 +252,7 @@ public class ListaLei extends Lista {
                         public void resp(JSONObject jsonObject) {
                             try {
                                 JSONArray jsonArrayComentario = jsonObject.getJSONArray("comentarios_user");
-                                ArrayList<ItemLei> comentario = parseJsonLei(jsonArrayComentario);
+                                ArrayList<Trecho> comentario = parseJsonLei(jsonArrayComentario);
                                 resp.resp(comentario);
                                 envarResposta();
                             } catch (JSONException e) {
@@ -279,7 +267,7 @@ public class ListaLei extends Lista {
                         }
                     });
         }else {
-            resp.resp(new ArrayList<ItemLei>());
+            resp.resp(new ArrayList<Trecho>());
         }
     }
 
@@ -294,7 +282,7 @@ public class ListaLei extends Lista {
                         public void resp(JSONObject jsonObject) {
                             try {
                                 JSONArray jsonArrayMarcacao = jsonObject.getJSONArray("marcacoes_user");
-                                ArrayList<ItemLei> marcacao = parseJsonLei(jsonArrayMarcacao);
+                                ArrayList<Trecho> marcacao = parseJsonLei(jsonArrayMarcacao);
                                 resp.resp(marcacao);
                                 envarResposta();
                             } catch (JSONException e) {
@@ -309,7 +297,7 @@ public class ListaLei extends Lista {
                         }
                     });
         }else {
-            resp.resp(new ArrayList<ItemLei>());
+            resp.resp(new ArrayList<Trecho>());
         }
     }
 
@@ -343,11 +331,11 @@ public class ListaLei extends Lista {
                 });
     }
 
-    private ArrayList<ItemLei> parseJsonLei(JSONArray jsonArrayLei) {
-        ArrayList<ItemLei> itensLei = new ArrayList<>();
+    private ArrayList<Trecho> parseJsonLei(JSONArray jsonArrayLei) {
+        ArrayList<Trecho> itensLei = new ArrayList<>();
         try {
             for (int i = 0; jsonArrayLei.length() > i; i++) {
-                ItemLei item = new ItemLei();
+                Trecho item = new Trecho();
                 if (jsonArrayLei.getJSONObject(i).has("ID")) {
                     item.setID(jsonArrayLei.getJSONObject(i).getInt("ID"));
                 }
@@ -436,13 +424,13 @@ public class ListaLei extends Lista {
     }
 
     public interface OnItemLei {
-        void resp(ArrayList<ItemLei> itemLeis);
+        void resp(ArrayList<Trecho> trechos);
     }
 
     public interface OnItemInfoLei {
-        void resp(ArrayList<ItemLei> itemLeis, ItemInfoLei infoLei);
+        void resp(ArrayList<Trecho> trechos, ItemInfoLei infoLei);
     }
     public interface OnTitArtComMar {
-        void resp(ArrayList<ItemLei> titulo,ArrayList<ItemLei> atigo,ArrayList<ItemLei> comentario,ArrayList<ItemLei> marcacao);
+        void resp(ArrayList<Trecho> titulo,ArrayList<Trecho> atigo,ArrayList<Trecho> comentario,ArrayList<Trecho> marcacao);
     }
 }

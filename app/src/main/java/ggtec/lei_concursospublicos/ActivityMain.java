@@ -23,8 +23,8 @@ import com.google.android.gms.ads.AdView;
 
 import ggtec.lei_concursospublicos.Adapter.AdapterAbas;
 import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
-import ggtec.lei_concursospublicos.Sistema.Fast;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Fast;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 import static ggtec.lei_concursospublicos.R.*;
 

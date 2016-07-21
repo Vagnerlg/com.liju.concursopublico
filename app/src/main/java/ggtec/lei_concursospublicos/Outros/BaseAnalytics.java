@@ -1,13 +1,12 @@
 package ggtec.lei_concursospublicos.Outros;
 
-import android.app.Application;
 import android.content.Context;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 /**
  * Created by Vagner on 07/12/2015.

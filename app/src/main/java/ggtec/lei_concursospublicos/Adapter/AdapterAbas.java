@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import ggtec.lei_concursospublicos.Abas.Aba;
-import ggtec.lei_concursospublicos.Sistema.ListaInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.ListaInfoLei;
 
 /**
  * Created by Vagner on 23/11/2015.

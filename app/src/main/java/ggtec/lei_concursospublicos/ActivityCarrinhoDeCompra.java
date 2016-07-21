@@ -9,8 +9,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import ggtec.lei_concursospublicos.Sistema.Debug;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 /**
  * Created by Vagner on 24/02/2016.

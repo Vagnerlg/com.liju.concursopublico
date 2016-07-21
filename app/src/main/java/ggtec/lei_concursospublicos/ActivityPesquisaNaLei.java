@@ -18,8 +18,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.Adapter.AdapterItemLei;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
-import ggtec.lei_concursospublicos.Sistema.ListaLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
+import ggtec.lei_concursospublicos.api_antiga.Lei;
 
 public class ActivityPesquisaNaLei extends AppCompatActivity {
 
@@ -80,22 +80,22 @@ public class ActivityPesquisaNaLei extends AppCompatActivity {
             if (!getIntent().getStringExtra("tab_num").equalsIgnoreCase("")) {
                 objNumResult.setVisibility(View.GONE);
                 mRecyclerView.setVisibility(View.GONE);
-                ListaLei listaLei = new ListaLei(getBaseContext(),findViewById(R.id.root), getIntent().getStringExtra("tab_num"));
-                listaLei.pesquisa(textoPesquisa.getText().toString(),
-                        new ListaLei.OnItemLei() {
+                Lei lei = new Lei(getBaseContext(),findViewById(R.id.root), getIntent().getStringExtra("tab_num"));
+                lei.pesquisa(textoPesquisa.getText().toString(),
+                        new Lei.OnItemLei() {
                             @Override
-                            public void resp(ArrayList<ItemLei> itemLeis) {
+                            public void resp(ArrayList<Trecho> trechos) {
                                 objNumResult.setVisibility(View.VISIBLE);
-                                if (itemLeis.size() == 0) {
+                                if (trechos.size() == 0) {
                                     objNumResult.setText("'" + textoPesquisa.getText().toString() + "' não obteve resultado.");
                                 } else {
                                     mRecyclerView.setVisibility(View.VISIBLE);
-                                    if (itemLeis.size() == 1) {
+                                    if (trechos.size() == 1) {
                                         objNumResult.setText("'" + textoPesquisa.getText().toString() + "' obteve 1 resultado.");
                                     } else {
-                                        objNumResult.setText("'" + textoPesquisa.getText().toString() + "' obteve " + itemLeis.size() + " resultados.");
+                                        objNumResult.setText("'" + textoPesquisa.getText().toString() + "' obteve " + trechos.size() + " resultados.");
                                     }
-                                    AdapterItemLei mAdapter = new AdapterItemLei(getBaseContext(), itemLeis, AdapterItemLei.ORIGEM_ACITIVITY_PESQUISA_NA_LEI);
+                                    AdapterItemLei mAdapter = new AdapterItemLei(getBaseContext(), trechos, AdapterItemLei.ORIGEM_ACITIVITY_PESQUISA_NA_LEI);
                                     mRecyclerView.setAdapter(mAdapter);
                                 }
                             }
