@@ -1,15 +1,11 @@
 package ggtec.lei_concursospublicos.Adapter;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import java.util.ArrayList;
-
 import ggtec.lei_concursospublicos.Abas.Aba;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
 
 /**
  * Created by Vagner on 23/11/2015.

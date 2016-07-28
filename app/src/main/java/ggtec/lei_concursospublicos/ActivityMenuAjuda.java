@@ -13,7 +13,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import ggtec.lei_concursospublicos.Adapter.AdapterMenuAjuda;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityMenuAjuda extends AppCompatActivity {
 

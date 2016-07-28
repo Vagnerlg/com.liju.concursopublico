@@ -16,7 +16,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -29,14 +28,14 @@ import ggtec.lei_concursospublicos.Dialog.DialogoFonte;
 import ggtec.lei_concursospublicos.Dialog.DialogoInfoLei;
 import ggtec.lei_concursospublicos.Outros.PainelEdicao;
 import ggtec.lei_concursospublicos.Service.MediaPlayerService;
-import ggtec.lei_concursospublicos.Sistema.Ajuda;
-import ggtec.lei_concursospublicos.Sistema.Config;
-import ggtec.lei_concursospublicos.Sistema.Debug;
-import ggtec.lei_concursospublicos.Sistema.ItemInfoLei;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
-import ggtec.lei_concursospublicos.Sistema.ListaLei;
-import ggtec.lei_concursospublicos.Sistema.ListaInfoLei;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Ajuda;
+import ggtec.lei_concursospublicos.api_antiga.Config;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
+import ggtec.lei_concursospublicos.api_antiga.ItemInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
+import ggtec.lei_concursospublicos.api_antiga.Lei;
+import ggtec.lei_concursospublicos.api_antiga.ListaInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityLei extends AppCompatActivity {
 
@@ -303,27 +302,27 @@ public class ActivityLei extends AppCompatActivity {
         }
     }
 
-    ListaLei listaLei;
+    Lei lei;
 
     private void internet(final int keyTipo) {
         buscaNet = true;
-        final ListaLei listaLei = new ListaLei(getBaseContext(),findViewById(R.id.root),  tab_num);
+        final Lei lei = new Lei(getBaseContext(),findViewById(R.id.root),  tab_num);
         if (keyTipo == KEY_NEW_NET || keyTipo == KEY_MENU_NET) {
             recyclerViewListaLei.setVisibility(View.GONE);
             if (keyTipo == KEY_NEW_NET) {
-                listaLei.getLeiMaisInfo(limit, new ListaLei.OnItemInfoLei() {
+                lei.getLeiMaisInfo(limit, new Lei.OnItemInfoLei() {
                     @Override
-                    public void resp(ArrayList<ItemLei> itemLeis, ItemInfoLei infoLei) {
-                        if(itemLeis.size() > 0) {
-                            totalItens = listaLei.getTotalItens();
+                    public void resp(ArrayList<Trecho> trechos, ItemInfoLei infoLei) {
+                        if(trechos.size() > 0) {
+                            totalItens = lei.getTotalItens();
                             title = infoLei.getNumAnoFormat();
                             ActivityLei.this.infolei = infoLei;
                             toolbarTop.setTitle(title);
                             ListaInfoLei listaMenu = new ListaInfoLei(getBaseContext());
-                            listaMenu.addHistorico(infoLei, itemLeis.get(0));
+                            listaMenu.addHistorico(infoLei, trechos.get(0));
                             recyclerViewListaLei.setVisibility(View.VISIBLE);
                             recyclerViewListaLei.setHasFixedSize(true);
-                            adapterItemLei = new AdapterItemLei(getBaseContext(), itemLeis, AdapterItemLei.ORIGEM_ACITIVITY_LEI);
+                            adapterItemLei = new AdapterItemLei(getBaseContext(), trechos, AdapterItemLei.ORIGEM_ACITIVITY_LEI);
                             recyclerViewListaLei.setAdapter(adapterItemLei);
                  //           layoutManagerRecycler.scrollToPosition(50);
                             if(!Config.getInstance(getBaseContext()).getDicaInicial()){
@@ -341,14 +340,14 @@ public class ActivityLei extends AppCompatActivity {
             }
             if(keyTipo == KEY_MENU_NET) {
                 //impementar lei em back
-                listaLei.getLei(limit, new ListaLei.OnItemLei() {
+                lei.getLei(limit, new Lei.OnItemLei() {
                     @Override
-                    public void resp(ArrayList<ItemLei> itemLeis) {
-                        if(itemLeis.size() > 0) {
+                    public void resp(ArrayList<Trecho> trechos) {
+                        if(trechos.size() > 0) {
                             ListaInfoLei listaMenu = new ListaInfoLei(getBaseContext());
-                            listaMenu.addHistorico(ActivityLei.this.infolei, itemLeis.get(0));
+                            listaMenu.addHistorico(ActivityLei.this.infolei, trechos.get(0));
                             recyclerViewListaLei.setVisibility(View.VISIBLE);
-                            adapterItemLei = new AdapterItemLei(getBaseContext(), itemLeis, AdapterItemLei.ORIGEM_ACITIVITY_LEI);
+                            adapterItemLei = new AdapterItemLei(getBaseContext(), trechos, AdapterItemLei.ORIGEM_ACITIVITY_LEI);
                             recyclerViewListaLei.setAdapter(adapterItemLei);
                             full(1000);
                             limit = adapterItemLei.list.get((adapterItemLei.list.size() - 1)).getID();
@@ -361,11 +360,11 @@ public class ActivityLei extends AppCompatActivity {
         }
         if(keyTipo == KEY_ADD_NET) {
             //impementar lei em back
-            listaLei.getLeiBack(limit, new ListaLei.OnItemLei() {
+            lei.getLeiBack(limit, new Lei.OnItemLei() {
                 @Override
-                public void resp(ArrayList<ItemLei> itemLeis) {
-                    if(itemLeis.size() > 0) {
-                        adapterItemLei.list.addAll(itemLeis);
+                public void resp(ArrayList<Trecho> trechos) {
+                    if(trechos.size() > 0) {
+                        adapterItemLei.list.addAll(trechos);
                         adapterItemLei.notifyDataSetChanged();
                         limit = adapterItemLei.list.get((adapterItemLei.list.size() - 1)).getID();
                     }

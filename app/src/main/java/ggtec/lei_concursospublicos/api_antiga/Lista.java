@@ -1,6 +1,5 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
-import android.app.Activity;
 import android.database.Cursor;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import ggtec.lei_concursospublicos.R;
+import ggtec.lei_concursospublicos.api_antiga.db.Banco;
 
 /**
  * Created by Vagner on 11/02/2016.

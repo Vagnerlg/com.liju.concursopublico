@@ -1,10 +1,11 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
-import android.os.Build;
+
+import ggtec.lei_concursospublicos.api_antiga.db.Banco;
 
 
 /**

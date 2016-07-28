@@ -14,8 +14,8 @@ import com.google.android.gms.ads.AdView;
 
 import ggtec.lei_concursospublicos.Dialog.SetString;
 import ggtec.lei_concursospublicos.Eventos.OnPositivoString;
-import ggtec.lei_concursospublicos.Sistema.Fast;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Fast;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityConta extends AppCompatActivity {
 

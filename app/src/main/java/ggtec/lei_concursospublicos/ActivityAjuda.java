@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import ggtec.lei_concursospublicos.Adapter.AdapterAjuda;
-import ggtec.lei_concursospublicos.Sistema.Ajuda;
-import ggtec.lei_concursospublicos.Sistema.Config;
+import ggtec.lei_concursospublicos.api_antiga.Ajuda;
+import ggtec.lei_concursospublicos.api_antiga.Config;
 
 /**
  * Created by Vagner on 25/02/2016.

@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 /**
  * Created by Vagner on 11/02/2016.

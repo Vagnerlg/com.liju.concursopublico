@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import ggtec.lei_concursospublicos.Abas.AbaAjuda;
-import ggtec.lei_concursospublicos.Sistema.Ajuda;
+import ggtec.lei_concursospublicos.api_antiga.Ajuda;
 
 /**
  * Created by Vagner on 25/02/2016.

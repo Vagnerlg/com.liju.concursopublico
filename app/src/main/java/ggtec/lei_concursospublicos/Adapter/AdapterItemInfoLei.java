@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.R;
 import ggtec.lei_concursospublicos.Eventos.onClickLei;
-import ggtec.lei_concursospublicos.Sistema.ItemInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.ItemInfoLei;
 
 /**
  * Created by Vagner on 24/11/2015.

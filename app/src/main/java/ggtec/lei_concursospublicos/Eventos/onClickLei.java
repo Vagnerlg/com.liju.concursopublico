@@ -8,7 +8,7 @@ import android.view.View;
 import ggtec.lei_concursospublicos.ActivityLei;
 import ggtec.lei_concursospublicos.Adapter.AdapterItemInfoLei;
 import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
-import ggtec.lei_concursospublicos.Sistema.ItemInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.ItemInfoLei;
 
 /**
  * Created by Vagner on 24/11/2015.

@@ -10,7 +10,6 @@ import android.widget.FrameLayout;
 
 import ggtec.lei_concursospublicos.Eventos.OnPositivoString;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
 
 /**
  * Created by Vagner on 09/01/2016.

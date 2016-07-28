@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
-import android.view.View;
 
 import ggtec.lei_concursospublicos.ActivityLogin;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.Internet;
 
 /**
  * Created by Vagner on 17/01/2016.

@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga.net;
 
 import android.content.Context;
 import android.os.Build;
@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
 
 /**
  * Created by Vagner on 16/12/2015.
@@ -217,16 +218,16 @@ public class Link {
     }
 
     public Link send(final OnJSONObject on){
-        Request request = new Request(this, new Request.RespJsonObj() {
+        Request_antigo request = new Request_antigo(this, new Request_antigo.RespJsonObj() {
             @Override
             public void response(JSONObject jsonObject, String erro,String mensagem) {
-                if(erro.equalsIgnoreCase(Request.SUCESSO)){
+                if(erro.equalsIgnoreCase(Request_antigo.SUCESSO)){
                     on.resp(jsonObject);
                 }else{
                     on.erro(erro, mensagem);
                     BaseAnalytics.getInstance(context).evento(BaseAnalytics.CAT_ERRO,erro,mensagem);
                 }
-                Debug.d("Performance "+performance());
+                Debug.d("Performance " + performance());
             }
         });
         request.setRetryPolicy(new DefaultRetryPolicy(

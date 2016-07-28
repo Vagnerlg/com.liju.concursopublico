@@ -1,11 +1,11 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 /**
  * Created by Vagner on 05/11/2015.
  */
 public class AdapterFala {
     private String fala;
-    public AdapterFala(ItemLei trecho){
+    public AdapterFala(Trecho trecho){
 
         this.fala = trecho.getTexto().replaceAll("(?i)art\\.", "Artigo")
                     .replaceAll("§§", "parágrafos")

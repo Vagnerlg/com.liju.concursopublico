@@ -9,15 +9,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
 
 /**
  * Created by Vagner on 20/12/2015.
  */
 public class AdapterMenuArtigo extends RecyclerView.Adapter<AdapterMenuArtigo.ViewHolder> {
-    public ArrayList<ItemLei> list;
+    public ArrayList<Trecho> list;
 
-    public AdapterMenuArtigo(ArrayList<ItemLei> lista){
+    public AdapterMenuArtigo(ArrayList<Trecho> lista){
         list = lista;
     }
 

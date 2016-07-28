@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,6 +16,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import ggtec.lei_concursospublicos.api_antiga.db.Banco;
+import ggtec.lei_concursospublicos.api_antiga.net.Link;
 
 import static java.lang.Long.*;
 
@@ -111,7 +114,7 @@ public class Usuario extends Lista {
                         } else {
                             bool.resp(false);
                         }
-                        Debug.d("Tempo net ");
+                        Debug.d("Tempo Net ");
                     }
 
                     @Override

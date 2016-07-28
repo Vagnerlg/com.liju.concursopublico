@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import ggtec.lei_concursospublicos.Eventos.onColorMarcacao;
 import ggtec.lei_concursospublicos.Outros.PainelEdicao;
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.Config;
-import ggtec.lei_concursospublicos.Sistema.Debug;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
+import ggtec.lei_concursospublicos.api_antiga.Config;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
 
 /**
  * Created by Vagner on 02/12/2015.
@@ -30,7 +30,7 @@ import ggtec.lei_concursospublicos.Sistema.ItemLei;
 public class AdapterItemLei extends RecyclerView.Adapter<AdapterItemLei.ViewHolder> {
 
     Context context;
-    public ArrayList<ItemLei> list = null;
+    public ArrayList<Trecho> list = null;
     private int limit;
     private float dp;
     public static String ORIGEM_MENU_COMENTARIO = "Menu comentário";
@@ -53,7 +53,7 @@ public class AdapterItemLei extends RecyclerView.Adapter<AdapterItemLei.ViewHold
         }
     }
 
-    public AdapterItemLei(Context con, ArrayList<ItemLei> lista, String origem) {
+    public AdapterItemLei(Context con, ArrayList<Trecho> lista, String origem) {
         context = con;
         list = lista;
         dp = context.getResources().getDisplayMetrics().density;

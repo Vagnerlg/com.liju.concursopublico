@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,6 +13,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.R;
+import ggtec.lei_concursospublicos.api_antiga.db.Banco;
+import ggtec.lei_concursospublicos.api_antiga.net.Link;
 
 /**
  * Created by Vagner on 25/11/2015.
@@ -159,7 +161,7 @@ public class ListaInfoLei extends Lista {
         return resp;
     }
 
-    public void addHistorico(ItemInfoLei itemMenu, ItemLei itemLei) {
+    public void addHistorico(ItemInfoLei itemMenu, Trecho trecho) {
         //buscar se a lei existe localmente
         Cursor cursor = Banco.getIntance(context).getReadableDatabase().query(Banco.TABLE_LEIS, allColunas, Banco.KEY_TABELA + "='" + itemMenu.getTabela() + "' AND " + Banco.KEY_NUMERO + "='" + itemMenu.getNumero() + "'", null, null, null, null);
         int time = (int) (System.currentTimeMillis());
@@ -168,8 +170,8 @@ public class ListaInfoLei extends Lista {
             ContentValues values = new ContentValues();
             values.put(Banco.KEY_DATE, time);
             values.put(Banco.KEY_FAVORITO, "true");
-            values.put(Banco.KEY_LEI_ID, itemLei.getLeiID());
-            values.put(Banco.KEY_LIMIT, itemLei.getID() + "");
+            values.put(Banco.KEY_LEI_ID, trecho.getLeiID());
+            values.put(Banco.KEY_LIMIT, trecho.getID() + "");
             int result = Banco.getIntance(context).getReadableDatabase().update(Banco.TABLE_LEIS, values, Banco.KEY_TABELA + "='" + itemMenu.getTabela() + "' AND " + Banco.KEY_NUMERO + "='" + itemMenu.getNumero() + "'", null);
             if (result == 1) {
                 Debug.d("Atualizado");
@@ -184,8 +186,8 @@ public class ListaInfoLei extends Lista {
             values.put(Banco.KEY_TABELA, itemMenu.getTabela());
             values.put(Banco.KEY_DATE, time);
             values.put(Banco.KEY_FAVORITO, "true");
-            values.put(Banco.KEY_LEI_ID, itemLei.getLeiID());
-            values.put(Banco.KEY_LIMIT, itemLei.getID() + "");
+            values.put(Banco.KEY_LEI_ID, trecho.getLeiID());
+            values.put(Banco.KEY_LIMIT, trecho.getID() + "");
             values.put(Banco.KEY_TIPO, itemMenu.getGrupo());
             long result = Banco.getIntance(context).getWritableDatabase().insert(Banco.TABLE_LEIS, null, values);
             if (result != -1) {

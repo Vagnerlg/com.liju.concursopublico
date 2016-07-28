@@ -1,4 +1,4 @@
-package ggtec.lei_concursospublicos.Sistema;
+package ggtec.lei_concursospublicos.api_antiga.net;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkError;
@@ -16,12 +16,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
+import ggtec.lei_concursospublicos.api_antiga.Debug;
 
 /**
  * Created by Vagner on 16/12/2015.
  */
-public class Request extends StringRequest {
+public class Request_antigo extends StringRequest {
     public static final String TIMEOUT = "Timeout";
     public static final String SERVERDONW = "ServerDonw";
     public static final String NO_NETWORK = "NetworkError";
@@ -47,7 +47,7 @@ public class Request extends StringRequest {
         return params;
     }
 
-    protected Request(final Link link, final RespJsonObj listernerListLei) {
+    protected Request_antigo(final Link link, final RespJsonObj listernerListLei) {
         super(Method.POST, link.getURL(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -64,7 +64,7 @@ public class Request extends StringRequest {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     listernerListLei.response(null, ERROR_JSON, response);
-                    Debug.d("Erro Json de (Response)");
+                    Debug.d("Erro Json de (Resposta)");
                     //api.openweathermap.org/data/2.5/weather?id=7521912&APPID=d036cf2a377d14531d5144a1343b4e77
                     /*
                     {"id": 7521912, "name": "Consolação", "cod": 200 }

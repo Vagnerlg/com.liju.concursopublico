@@ -5,23 +5,22 @@ import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.R;
-import ggtec.lei_concursospublicos.Sistema.ItemLei;
+import ggtec.lei_concursospublicos.api_antiga.Trecho;
 
 /**
  * Created by Vagner on 20/12/2015.
  */
 public class AdapterMenuTitulo extends RecyclerView.Adapter<AdapterMenuTitulo.ViewHolder> {
-    public ArrayList<ItemLei> list;
+    public ArrayList<Trecho> list;
     private float dp;
     private Context context;
 
-    public AdapterMenuTitulo(ArrayList<ItemLei> lista,float dp,Context con){
+    public AdapterMenuTitulo(ArrayList<Trecho> lista,float dp,Context con){
         list = lista;
         this.dp = dp;
         context = con;

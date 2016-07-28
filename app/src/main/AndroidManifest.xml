@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ggtec.lei_concursospublicos" >
+    package="ggtec.lei_concursospublicos">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,11 +12,12 @@
         android:icon="@drawable/laucher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <!--
         <activity
             android:name=".ActivityLaucher"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,7 @@
         <activity
             android:name=".ActivityMain"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -34,7 +35,7 @@
         <activity
             android:name=".ActivityCarrinhoDeCompra"
             android:label="@string/title_activity_carrinho_de_compra"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -42,7 +43,7 @@
         <activity
             android:name=".ActivityPlayer"
             android:label="@string/title_activity_player"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -51,7 +52,7 @@
             android:name=".ActivityMenusLeis"
             android:label="@string/title_activity_menus"
             android:parentActivityName=".ActivityLei"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -72,19 +73,19 @@
             android:name=".ActivityPesquisaNaLei"
             android:label="@string/title_pesquisa_na_lei"
             android:parentActivityName=".ActivityLei"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name="com.google.android.gms.analytics.AnalyticsReceiver"
-            android:enabled="true" >
+            android:enabled="true">
             <intent-filter>
                 <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
             </intent-filter>
@@ -97,20 +98,20 @@
 
         <receiver
             android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
         </receiver>
 
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
-
+        <!--
         <activity
             android:name=".ActivityFaleConosco"
             android:label="@string/title_activity_activity_fale_conosco"
             android:parentActivityName=".ActivityMain"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ggtec.lei_concursospublicos.ActivityMain" />
@@ -119,7 +120,7 @@
             android:name=".ActivityPesquisaDeLei"
             android:label="@string/title_activity_activity_pesquisa_de_lei"
             android:parentActivityName=".ActivityMain"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ggtec.lei_concursospublicos.ActivityMain" />
@@ -128,7 +129,7 @@
             android:name=".ActivityPremium"
             android:label="@string/title_activity_activity_premium"
             android:parentActivityName=".ActivityMain"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ggtec.lei_concursospublicos.ActivityMain" />
@@ -150,6 +151,14 @@
         <activity
             android:name=".ActivityMenuAjuda"
             android:theme="@style/AppTheme.NoActionBar" />
+            -->
+        <activity android:name=".teste">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

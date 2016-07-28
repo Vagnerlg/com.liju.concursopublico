@@ -18,9 +18,9 @@ import com.google.android.gms.ads.AdView;
 import java.util.ArrayList;
 
 import ggtec.lei_concursospublicos.Adapter.AdapterItemInfoLei;
-import ggtec.lei_concursospublicos.Sistema.ItemInfoLei;
-import ggtec.lei_concursospublicos.Sistema.ListaInfoLei;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.ItemInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.ListaInfoLei;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityPesquisaDeLei extends AppCompatActivity {
 

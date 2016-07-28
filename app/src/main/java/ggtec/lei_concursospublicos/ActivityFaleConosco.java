@@ -16,8 +16,8 @@ import com.google.android.gms.ads.AdView;
 
 import org.json.JSONObject;
 
-import ggtec.lei_concursospublicos.Sistema.Link;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.net.Link;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityFaleConosco extends AppCompatActivity {
 

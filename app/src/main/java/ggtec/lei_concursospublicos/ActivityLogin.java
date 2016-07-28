@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ggtec.lei_concursospublicos.Outros.BaseAnalytics;
-import ggtec.lei_concursospublicos.Sistema.Usuario;
+import ggtec.lei_concursospublicos.api_antiga.Usuario;
 
 public class ActivityLogin extends AppCompatActivity {
 
